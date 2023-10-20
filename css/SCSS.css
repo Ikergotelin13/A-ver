@@ -1,0 +1,142 @@
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header img {
+  height: 75px;
+  margin: 5px;
+  align-self: center;
+}
+header nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  padding: 1rem;
+  position: relative;
+}
+header nav ul li:hover {
+  background-color: lightgray;
+}
+header nav ul li:hover ul.submenu {
+  display: flex;
+}
+header nav ul.submenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: black;
+  top: 3.5rem;
+  left: 0;
+}
+header nav a {
+  font-size: 1.5rem;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+header nav a:hover {
+  text-shadow: 2px 2px 3px black;
+  background-color: darkgray;
+}
+header nav.megamenu {
+  position: relative;
+}
+header nav.megamenu .inner {
+  visibility: hidden;
+  display: flex;
+  padding: 1rem;
+  gap: 5rem;
+  opacity: 0;
+  transition: 1s;
+  position: absolute;
+  background-color: black;
+}
+header nav.megamenu.reveal .inner {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav.offcanvas {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  width: 20rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+  background-color: blue;
+  color: white;
+  margin-left: -20rem;
+  transition: 1s;
+}
+nav.offcanvas ul {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+nav.offcanvas a {
+  color: white;
+}
+
+nav.offcanvas.reveal {
+  margin-left: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+  text-align: center;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: white;
+  color: blue;
+  font-size: 3rem;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#loader div {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: solid;
+  border-width: 50px;
+  border-color: blue white;
+  animation: spin 2s linear infinite;
+}
+#loader.finished {
+  display: none;
+}/*# sourceMappingURL=SCSS.css.map */
